@@ -4,7 +4,9 @@
   --light: #f6f7f8;
   --dark: #1a2a36;
 }
-
+h2.m-0.text-primary {
+  font-family: 'Dancing Script', cursive;
+}
 .fw-medium {
   font-weight: 500 !important;
 }
@@ -570,4 +572,49 @@
 
 .footer .copyright a:hover {
   color: var(--primary);
+}
+
+@font-face {
+  font-family: samaranfont;
+  src: url(SAMARN__.TTF);
+}
+
+/* (A) FIXED WRAPPER */
+.hwrap {
+  overflow: hidden; /* HIDE SCROLL BAR */
+  background: #eee;
+}
+
+/* (B) MOVING TICKER WRAPPER */
+.hmove {
+  display: flex;
+}
+
+/* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+.hitem {
+  flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  text-align: center;
+}
+.hitem {
+  font-family: samaranfont;
+  word-spacing: 2px;
+}
+/* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+/* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+@keyframes tickerh {
+  0% {
+    transform: translate3d(75%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+.hmove {
+  animation: tickerh linear 40s infinite;
+}
+.hmove:hover {
+  animation-play-state: paused;
 }
